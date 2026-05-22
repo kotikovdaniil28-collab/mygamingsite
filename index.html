@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TerraPolis — политический Minecraft сервер</title>
+  <meta name="description" content="TerraPolis — Minecraft сервер городов, наций, дипломатии, войн, судов, провинций, экономики и физической пивоварни." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <canvas id="stars" aria-hidden="true"></canvas>
+  <div class="site-shell">
+    <header class="topbar" id="topbar">
+      <a class="brand" href="#home" aria-label="TerraPolis">
+        <span class="brand-mark">TP</span>
+        <span><b>TerraPolis</b><small>города • нации • войны</small></span>
+      </a>
+      <nav class="nav">
+        <a href="#wiki">Вики</a>
+        <a href="#commands">Команды</a>
+        <a href="#donate">Донат</a>
+        <a href="#brewing">Напитки</a>
+        <a href="#map">Карта</a>
+      </nav>
+      <button class="btn small ghost" data-copy="c7.play2go.cloud:20048">Скопировать IP</button>
+    </header>
+
+    <main>
+      <section id="home" class="hero">
+        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="hero-grid" aria-hidden="true"></div>
+        <div class="hero-content reveal">
+          <p class="eyebrow"><span class="live-dot"></span> TerraPolis v57 • политическая песочница</p>
+          <h1>Построй город. Собери нацию. Выиграй политику.</h1>
+          <p class="hero-lead">Сервер, где территория — это власть, казна — инструмент, суд — давление, а война за чанк может изменить карту мира.</p>
+          <div class="hero-actions">
+            <button class="btn primary" data-copy="c7.play2go.cloud:20048">Играть: c7.play2go.cloud:20048</button>
+            <a class="btn secondary" href="http://c7.play2go.cloud:20332" target="_blank" rel="noreferrer">Открыть карту мира</a>
+            <a class="btn glass" href="#wiki">Изучить вики</a>
+          </div>
+          <div class="hero-stats">
+            <div><b>Города</b><span>создание, claim, мэрия, роли</span></div>
+            <div><b>Дипломатия</b><span>нации, союзы, договоры, вассалы</span></div>
+            <div><b>Войны</b><span>чанки, провинции, блокады, Dynmap</span></div>
+            <div><b>Экономика</b><span>казна, налоги, аукцион, торговля</span></div>
+          </div>
+        </div>
+        <aside class="hero-card reveal delay-1">
+          <div class="terminal-head"><span></span><span></span><span></span><b>/guide</b></div>
+          <div class="terminal-body">
+            <p><em>Игрок:</em> хочу понять сервер</p>
+            <p><strong>TerraPolis:</strong> начни с <code>/guide</code>, создай город через <code>/pol town create</code>, поставь мэрию, выбери политику и смотри карту.</p>
+            <p class="mono">/pol menu laws<br>/pol town outpost create Северный_Форт fort<br>/pol war capture</p>
+          </div>
+        </aside>
+        <div class="scroll-hint">листай вниз <span>⌄</span></div>
+      </section>
+
+      <section class="section reveal" id="quick">
+        <div class="section-title">
+          <span class="section-kicker">Старт за 3 минуты</span>
+          <h2>Что делать новому игроку</h2>
+          <p>Этот блок — короткий маршрут. Ниже есть полная вики и каталог команд.</p>
+        </div>
+        <div class="steps">
+          <article><b>01</b><h3>Зайди на сервер</h3><p>IP: <code>c7.play2go.cloud:20048</code>. Прими ресурспак, иначе не увидишь иконки, бейджи, оружие и напитки.</p></article>
+          <article><b>02</b><h3>Открой гайд</h3><p><code>/guide</code> покажет базовую логику. <code>/pol menu</code> открывает главное меню.</p></article>
+          <article><b>03</b><h3>Выбери материк</h3><p><code>/pol nationality</code>, затем <code>/pol rtp</code>. Так ты попадёшь в дикие земли для старта.</p></article>
+          <article><b>04</b><h3>Создай город</h3><p><code>/pol town create Название</code>, потом <code>/pol town hall</code>. Дальше расширяйся через <code>/pol town claim</code>.</p></article>
+        </div>
+      </section>
+
+      <section class="section feature-wall reveal">
+        <div class="feature-big">
+          <h2>Не обычный survival, а политическая стратегия в Minecraft</h2>
+          <p>В TerraPolis игроки управляют городами: назначают роли, собирают казну, выбирают религию и режим, создают провинции, спорят в суде, объявляют войны, строят барные цепочки и ведут экономику через реальные игровые действия.</p>
+          <div class="pill-row">
+            <span>BossBar территорий</span><span>Dynmap границы</span><span>Суд</span><span>Доверие мэра</span><span>Провинции</span><span>3D оружие</span>
+          </div>
+        </div>
+        <div class="screenshot-frame">
+          <img src="assets/spawn-preview.jpg" alt="Скриншот спавна TerraPolis без интерфейса" />
+        </div>
+      </section>
+
+
+
+      <section class="section gameplay-strip reveal" id="gameplay">
+        <div class="section-title compact-title">
+          <span class="section-kicker">Живой геймплей</span>
+          <h2>Игрок сразу понимает, чем заняться</h2>
+          <p>Блоки идут подряд без пустых экранов: город, экономика, война, суд, напитки и карта.</p>
+        </div>
+        <div class="gameplay-grid">
+          <article><span>01</span><h3>Город</h3><p><code>/pol town create</code>, мэрия, роли, claim и развитие.</p></article>
+          <article><span>02</span><h3>Провинции</h3><p>Порты, шахты, форты, колонии, дороги и автономия районов.</p></article>
+          <article><span>03</span><h3>Политика</h3><p>Законы, суд, доверие мэра, налоги и управленческие роли.</p></article>
+          <article><span>04</span><h3>Война</h3><p>Войны за чанки, провинции, блокады, захваты и админ-сценарии.</p></article>
+          <article><span>05</span><h3>Бар</h3><p>Кофе, чай, квас, бочки, погреба и реальные предметы Minecraft.</p></article>
+          <article><span>06</span><h3>Карта</h3><p>Dynmap показывает города, границы, мэрии и районы.</p></article>
+        </div>
+      </section>
+
+      <section id="wiki" class="section reveal">
+        <div class="section-title">
+          <span class="section-kicker">Полная вики</span>
+          <h2>Как реально играть</h2>
+          <p>Разделы ниже объясняют механику не как список слов, а как последовательность действий.</p>
+        </div>
+        <div class="wiki-layout">
+          <aside class="wiki-tabs" id="wikiTabs" aria-label="Разделы вики"></aside>
+          <div class="wiki-panel" id="wikiPanel"></div>
+        </div>
+      </section>
+
+      <section id="commands" class="section reveal">
+        <div class="section-title">
+          <span class="section-kicker">Командный справочник</span>
+          <h2>Все основные команды PolityMinePolitical</h2>
+          <p>Начни вводить слово: город, война, суд, админ, напитки, dynmap, npc. Карточки фильтруются сразу.</p>
+        </div>
+        <div class="command-tools">
+          <input id="commandSearch" type="search" placeholder="Поиск команды: /pol town claim, суд, мэрия, brewing..." />
+          <button class="btn small ghost" id="expandAll">Развернуть всё</button>
+        </div>
+        <div class="command-grid" id="commandGrid"></div>
+      </section>
+
+      <section id="donate" class="section donate-section reveal">
+        <div class="section-title">
+          <span class="section-kicker">Привилегии из плагина</span>
+          <h2>Донат без ломания политики</h2>
+          <p>Эти ранги взяты из LuckPerms-команд и прав плагина: бейджи, косметика, аукцион, BattlePass и удобства.</p>
+        </div>
+        <div class="donate-grid" id="donateGrid"></div>
+        <div class="compare-card">
+          <h3>Сравнение бонусов</h3>
+          <div class="table-wrap">
+            <table id="donateTable"></table>
+          </div>
+        </div>
+      </section>
+
+      <section id="brewing" class="section reveal">
+        <div class="section-title">
+          <span class="section-kicker">Физические напитки</span>
+          <h2>Зельеварка, бочки и погреба</h2>
+          <p>Это игровые рецепты сервера. Напитки готовятся через предметы Minecraft, а не через кнопку в меню.</p>
+        </div>
+        <div class="brew-grid">
+          <article class="brew-card"><h3>Зельеварка</h3><p>Поставь Brewing Stand. В нижние слоты положи бутылки, в верхний — ингредиент. Присядь и нажми ПКМ.</p><code>Кофейные зёрна → кофе</code><code>Чайные листья → зелёный чай</code><code>Какао → горячий шоколад</code></article>
+          <article class="brew-card"><h3>Погребная бочка</h3><p>Поставь Barrel ниже Y=55, рядом с камнем/льдом, без лавы и костров. Положи ингредиенты и нажми Shift+ПКМ.</p><code>Ржаной солод → погребной квас</code><code>Ледяная крошка → холодный напиток</code><code>Ягодное сусло → компот</code></article>
+          <article class="brew-card"><h3>Городские требования</h3><p>Часть рецептов требует развитие Таверны, Пивоварни, Дистиллерии, Торговли или других веток города.</p><code>/pol brew recipes</code><code>/pol crafts list</code><code>/pol brew guide</code></article>
+        </div>
+        <div class="ingredient-cloud" id="ingredientCloud"></div>
+      </section>
+
+      <section id="map" class="section map-section reveal">
+        <div class="map-card">
+          <div>
+            <span class="section-kicker">Карта мира</span>
+            <h2>Dynmap показывает города, территории и мэрии</h2>
+            <p>На карте можно смотреть границы городов, провинции, мэрии и важные точки. Если карта не открывается, проверь, что порт 20332 включён на хостинге.</p>
+          </div>
+          <a class="btn primary" href="http://c7.play2go.cloud:20332" target="_blank" rel="noreferrer">Открыть Dynmap</a>
+        </div>
+      </section>
+
+      <section class="section socials reveal">
+        <div class="section-title">
+          <span class="section-kicker">Сообщество</span>
+          <h2>Соцсети TerraPolis</h2>
+        </div>
+        <div class="social-grid">
+          <a href="https://discord.gg/EGhcbRDzG" target="_blank" rel="noreferrer">Discord<span>discord.gg/EGhcbRDzG</span></a>
+          <a href="https://vk.ru/club238922711" target="_blank" rel="noreferrer">VK<span>vk.ru/club238922711</span></a>
+          <a href="https://youtube.com/@terrapolis-y3s?si=M6hd04EfkU4soa9d" target="_blank" rel="noreferrer">YouTube<span>@terrapolis-y3s</span></a>
+          <a href="https://www.tiktok.com/@terrapolis1" target="_blank" rel="noreferrer">TikTok<span>@terrapolis1</span></a>
+          <a href="mailto:terrapolis1@gmail.com">Почта<span>terrapolis1@gmail.com</span></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <b>TerraPolis</b>
+      <span>IP: c7.play2go.cloud:20048</span>
+      <span>Карта: c7.play2go.cloud:20332</span>
+    </footer>
+  </div>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
